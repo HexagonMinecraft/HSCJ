@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="app">
+
+<head>
+
+	<!-- META information -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Hexagon official MC server website!">
+	<meta name="author" content="Noah Prail <Me@NPrail.me>" />
+	<meta name="keywords" content="minecraft" />
+
+	<title>Hexagon MC</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css" type='text/css'>
+
+	<!-- Fonts -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type='text/css'>
+	<link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:800' rel='stylesheet' type='text/css'>
+
+	<!-- Icons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="images/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="images/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+	<link rel="manifest" href="manifest.json">
+	<meta name="msapplication-TileColor" content="#333333">
+	<meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
+	<meta name="theme-color" content="#333333">
+	<!-- END Icons -->
+</head>
+
+<body ng-controller="AppCtrl">
+
+	<!-- Top section -->
+	<div class="top fullscreen background parallax" id="top" style="background-image:url('images/background.jpg');" data-img-width="1920"
+		data-img-height="1080" data-diff="250">
+		<div class="content-a">
+			<div class="overlay"></div>
+			<div class="content-b">
+				<div class="dark-line">
+					<h1>Hexagon MC</h1>
+					<p>The Hexagon MC Official Minecraft Server!</p>
+				</div>
+				<div class="arrows"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Navigation -->
+	<div class="nav-content">
+		<nav class="navbar navbar-static-top" role="navigation">
+			<div class="container">
+
+				<!-- Toggle icon for responsive design -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+						aria-controls="navbar">
+            			<span class="sr-only">Toggle navigation</span>
+            			<span class="icon-bar"></span>
+            			<span class="icon-bar"></span>
+         		   		<span class="icon-bar"></span>
+          			</button>
+				</div>
+
+				<!-- Change your links here -->
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-center">
+						<li><a href="#top">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#team">Members</a></li>
+						<li><a href="#map">Map</a></li>
+						<li><a href="https://support.hexagonminecraft.com/en/knowledgebase/3-getting-started/docs/3-rules">Rules</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<!-- About section -->
+	<section class="about" id="about">
+		<div class="container">
+			<h3>We are Hexagon MC</h3>
+			<div class="divider">
+				<div class="hr">
+					<div class="hr-dot"></div>
+				</div>
+			</div>
+			<h4>Join on play.hexagonminecraft.com</h4>
+			<div class="col-md-6 about-item">
+				<i class="fa fa-cog fa-2x"></i>
+				<div class="col-content">
+					<h5>Why <i>Hexagon</i> MC?</h5>
+					<p>There are six members of Hexagon MC, so we named ourselves Hexagon MC. </p>
+				</div>
+			</div>
+			<div class="col-md-6 about-item">
+				<i class="fa fa-users fa-2x"></i>
+				<div class="col-content">
+					<h5>Small community</h5>
+					<p>There are only six main members (thus hexagon) and a few non-member players as well!</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Action bar -->
+	<section class="action-bar dark" id="section-bar-1">
+		<div class="container">
+			<div class="col-md-8">
+				<h3 class="small dark" ng-show="done"><span ng-style="onlineColor">
+						Server {{ isOnline }}</span> <span ng-show="status.status">| There are {{status.players.online}} players currently online.</span>
+				</h3>
+			</div>
+			<div class="col-md-4">
+				<a href="#" class="button button-dark">
+					<span class="button-text">MC Version: {{status.version }}</span>
+					<span class="button-icon"><i class="fa fa-arrow-right"></i></span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Number counter section -->
+	<section class="not-fullscreen background parallax counter" id="counter" style="background-image:url('images/counter-bg.jpg');"
+		data-img-width="1600" data-img-height="1064" data-diff="500">
+		<div class="content-a">
+			<div class="content-b">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="col-xs-3">
+						<span class="counter-number white">{{status.players.online}}</span>
+						<span class="white counter-text">players online</span>
+					</div>
+					<div class="col-xs-3">
+						<span class="counter-number white">10</span>
+						<span class="white counter-text">players joined in total</span>
+					</div>
+					<div class="col-xs-3">
+						<span class="counter-number white">6</span>
+						<span class="white counter-text">months online</span>
+					</div>
+					<div class="col-xs-3">
+						<span class="counter-number white">6</span>
+						<span class="white counter-text">great members</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Team section -->
+	<section class="team" id="team">
+		<div class="container">
+			<h3>The members of Hexagon MC</h3>
+			<div class="divider">
+				<div class="hr">
+					<div class="hr-dot"></div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<img src="https://mcapi.ca/avatar/2d/SirFilios" alt="SirFilios">
+				<h4 class="bold">SirFilios</h4>
+			</div>
+			<div class="col-md-4">
+				<img src="https://mcapi.ca/avatar/2d/Time_Explorer" alt="Time_Explorer">
+				<h4 class="bold">Time_Explorer</h4>
+			</div>
+			<div class="col-md-4">
+				<img src="https://mcapi.ca/avatar/2d/MandaloreTheFire" alt="MandaloreTheFire">
+				<h4 class="bold">MandaloreTheFire</h4>
+			</div>
+			<div class="col-md-4">
+				<img src="https://mcapi.ca/avatar/2d/RavewnClaw" alt="RavewnClaw">
+				<h4 class="bold">RavewnClaw</h4>
+			</div>
+			<div class="col-md-4">
+				<img src="https://mcapi.ca/avatar/2d/Black_WolfKnight" alt="Black_WolfKnight">
+				<h4 class="bold">Black_WolfKnight</h4>
+			</div>
+			<div class="col-md-4">
+				<img src="https://mcapi.ca/avatar/2d/OnceUponABlock" alt="OnceUponABlock">
+				<h4 class="bold">OnceUponABlock</h4>
+			</div>
+		</div>
+	</section>
+
+	<!-- Map section -->
+	<section class="map" id="map">
+		<div class="container">
+			<h3>Hexagon MC Map</h3>
+			<div class="divider">
+				<div class="hr">
+					<div class="hr-dot"></div>
+				</div>
+			</div>
+		</div>
+		<iframe class="" height="500" width="100%" src="https://map.hexagonminecraft.com" frameborder="0" scrolling="no" marginheight="0"
+			marginwidth="0"></iframe>
+	</section>
+
+	<!-- Bottom section -->
+	<section class="bottom dark">
+		<div class="container">
+			<div class="bottom-content">
+				<span class="ip">play.hexagonminecraft.com</span>
+				<span class="server-name">Hexagon MC</span>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="dark">
+		<div class="container">
+			<span class="copyright">Design by <a href="https://nprail.me">Noah Prail</a></span>
+			<ul>
+				<li><a href="#top">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#team">Members</a></li>
+				<li><a href="#map">Map</a></li>
+				<li><a href="https://support.hexagonminecraft.com/en/knowledgebase/3-getting-started/docs/3-rules">Rules</a></li>
+			</ul>
+		</div>
+	</footer>
+
+
+	<!-- jQuery Version 1.10.2 -->
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+	<!-- Angular JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+	<!-- Custom JavaScript -->
+	<script src="js/main.js"></script>
+
+	<!-- App JavaScript -->
+	<script src="js/app/app.js"></script>
+	<script src="js/app/controllers.js"></script>
+</body>
+
+</html>
